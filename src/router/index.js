@@ -2,11 +2,13 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
-
+// 页面视图
 import Login from '../views/Login'
 import Home from '../views/Home'
 
-
+// 局部视图组件
+import Welcome from '../components/Welcome'
+import User from '../components/user/User'
 
 const routes = [
   {
@@ -19,7 +21,15 @@ const routes = [
   },
   {
     path: '/home',
-    component: Home
+    component: Home,
+    redirect: '/home/welcome',
+    children: [{
+      path: "welcome",
+      component: Welcome
+    },{
+      path: "users",
+      component: User
+    }]
   }
 ]
 

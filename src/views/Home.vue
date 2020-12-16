@@ -18,26 +18,30 @@
           :unique-opened="true"
           :collapse="isCollapse"
           :collapse-transition="false"
+          :router="true"
+          :default-active="$router.path"
         >
         <div class="menus-collapse" @click="collpaseMenus">|||</div>
           <!-- 第一级 -->
-          <el-submenu :index="item1.id + ''" v-for="item1 in menus" :key="item1.id">
+          <el-submenu :index="item1.path + ''" v-for="item1 in menus" :key="item1.id">
             <template slot="title">
               <i :class="menusIcons[item1.id]"></i>
               <span>{{item1.authName}}</span>
             </template>
             <!-- 第二级 -->
-            <el-menu-item :index="item2.id + ''" v-for="item2 in item1.children" :key="item2.id" >
+            <el-menu-item :index="'/home/' + item2.path" v-for="item2 in item1.children" :key="item2.id">
               <template slot="title">
                 <i class="el-icon-menu"></i>
-                <span>{{item2.id}}</span>
+                <span>{{item2.authName}}</span>
               </template>
             </el-menu-item>
           </el-submenu>
         </el-menu>
       </el-aside>
       <!-- 主体区域 -->
-      <el-main>Main</el-main>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -55,7 +59,7 @@ export default {
         '125': 'iconfont icon-user',
         '145': 'iconfont icon-baobiao'
       },
-      isCollapse: false
+      isCollapse: false,
     };
   },
   created() {
@@ -76,7 +80,7 @@ export default {
     collpaseMenus() {
       this.isCollapse = !this.isCollapse;
     }
-  },
+  }
 };
 </script>
 
@@ -116,5 +120,8 @@ export default {
   text-align: center;
   height: 24px;
   letter-spacing: 1px;
+}
+.el-main {
+  background-color: #eaedf1;
 }
 </style>
