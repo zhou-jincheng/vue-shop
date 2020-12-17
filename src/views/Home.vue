@@ -19,7 +19,7 @@
           :collapse="isCollapse"
           :collapse-transition="false"
           :router="true"
-          :default-active="$router.path"
+          :default-active="$route.path"
         >
         <div class="menus-collapse" @click="collpaseMenus">|||</div>
           <!-- 第一级 -->
@@ -72,9 +72,8 @@ export default {
       this.$router.replace("/login");
     },
     async getMenus() {
-      let { data: res } = await request("rights/tree");
+      let { data: res } = await request("menus");
       this.menus = res.data;
-      // console.log(res);
     },
     // 折叠菜单栏
     collpaseMenus() {

@@ -9,6 +9,8 @@ import Home from '../views/Home'
 // 局部视图组件
 import Welcome from '../components/Welcome'
 import User from '../components/user/User'
+import Rights from '../components/rights/Rights'
+import Roles from '../components/rights/Roles'
 
 const routes = [
   {
@@ -29,6 +31,12 @@ const routes = [
     },{
       path: "users",
       component: User
+    },{
+      path: "rights",
+      component: Rights
+    },{
+      path: "roles",
+      component: Roles
     }]
   }
 ]
