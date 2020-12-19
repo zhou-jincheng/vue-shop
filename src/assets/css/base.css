@@ -5,3 +5,9 @@ html, body, #app {
     width: 100%;
     min-width: 1366px;
 }
+
+/* 因el-cascader级联选择器的选项卡高度太大，
+需全局设置才能设置选项卡的高度 */
+.el-scrollbar {
+  height: 200px!important;
+}
