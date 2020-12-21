@@ -11,3 +11,13 @@ html, body, #app {
 .el-scrollbar {
   height: 200px!important;
 }
+
+/* 统一设置面包屑字体大小 */
+.el-breadcrumb {
+  font-size: 12px;
+}
+
+/* 全局配置富文本编辑器Vue-quill-editor的高度 */
+.ql-blank {
+  height: 300px!important;
+}

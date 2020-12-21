@@ -14,6 +14,7 @@ import Roles from '../components/rights/Roles'
 import Cate from '../components/goods/Cate'
 import Param from '../components/goods/Param'
 import Good from '../components/goods/Good'
+import Add from '../components/goods/Add'
 
 const routes = [
   {
@@ -49,6 +50,9 @@ const routes = [
     },{
       path: "params",
       component: Param
+    },{
+      path: "add",
+      component: Add
     }]
   }
 ]
