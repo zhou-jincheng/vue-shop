@@ -16,6 +16,7 @@ import Param from '../components/goods/Param'
 import Good from '../components/goods/Good'
 import Add from '../components/goods/Add'
 import Order from '../components/order/Order'
+import Report from '../components/report/Report'
 
 const routes = [
   {
@@ -57,6 +58,10 @@ const routes = [
     },{
       path: "orders",
       component: Order
+    },{
+      path: "reports",
+      component: Report
+      
     }]
   }
 ]
