@@ -15,6 +15,7 @@ import Cate from '../components/goods/Cate'
 import Param from '../components/goods/Param'
 import Good from '../components/goods/Good'
 import Add from '../components/goods/Add'
+import Order from '../components/order/Order'
 
 const routes = [
   {
@@ -53,6 +54,9 @@ const routes = [
     },{
       path: "add",
       component: Add
+    },{
+      path: "orders",
+      component: Order
     }]
   }
 ]

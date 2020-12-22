@@ -23,6 +23,20 @@ import 'quill/dist/quill.bubble.css' // for bubble theme
 Vue.use(VueQuillEditor, /* { default global options } */)
 
 
+//定义全局过滤器，处理时间
+Vue.filter('dateFormat', res => {
+  let date = new Date(res);
+  let y = date.getFullYear();
+  let M = (date.getMonth() + 1).toString().padStart(2, '0');
+  let d = date.getDay().toString().padStart(2, '0');
+
+  let h = date.getHours().toString().padStart(2, '0');
+  let m = date.getMinutes().toString().padStart(2, '0');
+  let s = date.getSeconds().toString().padStart(2, '0')
+
+  return `${y}-${M}-${d} ${h}:${m}:${s}`
+})
+
 //阻止启动生产消息
 Vue.config.productionTip = false
 
